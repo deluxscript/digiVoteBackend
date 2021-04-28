@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://admin:digivote2021@digivotedb.xhp8j.mongodb.net/DigiVotedb?retryWrites=true&w=majority"
+}
