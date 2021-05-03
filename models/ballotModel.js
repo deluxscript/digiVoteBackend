@@ -10,7 +10,10 @@ const ballotSchema = new mongoose.Schema({
     bodyName: {
         type: String
     },
-    email: {
+    contractAddress: {
+        type: String
+    },
+    adminEmail: {
         type: String,
         unique: true
     },

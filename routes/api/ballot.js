@@ -4,11 +4,11 @@ const router = express.Router();
 const Ballot = require('../../models/ballotModel');
 
 router.get('/', (req, res) => {
-    Ballot.find()
+    var id = req.query.ballotId;
+    Ballot.find({ballotId: id})
     .then(ballots => res.json(ballots))
     .catch(err => res.status(404).json({ noballotsfound: 'No Ballots found' }));
 });
-
 
 router.get('/latest', (req, res) => {
     Ballot.find({}).sort({_id:-1}).limit(1)

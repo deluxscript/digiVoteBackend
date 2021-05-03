@@ -4,7 +4,8 @@ const router = express.Router();
 const Voter = require('../../models/voterModel');
 
 router.get('/', (req, res) => {
-    Voter.find()
+    var id = req.query.ballotId;
+    Voter.find({ballotId: id})
     .then(voters => res.json(voters))
     .catch(err => res.status(404).json({ novotersfound: 'No Voters found' }));
 });
